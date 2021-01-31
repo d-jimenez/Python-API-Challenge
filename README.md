@@ -49,39 +49,60 @@ In order to use both the WeatherPy.ipynb and the VacationPy.ipynb, you must firs
 
 7. Lastsly, run the VacationPy script to create the humidity heatmap, filter down the weather results based on specific conditions and then find the hotel/loging closest to the coordinates for each city.  
 
-## Output
+## Output and Observations
 
 ### WeatherPy
+#### Weather Data Scatter Plots
+
 The first requirement is to create a series of scatter plots to showcase the following relationships:
 
 * Temperature (F) vs. Latitude
-* Humidity (%) vs. Latitude
-* Cloudiness (%) vs. Latitude
-* Wind Speed (mph) vs. Latitude
+    - The Max Temperature vs. City Latitude scatter plot visualy displays how the latitude of a city impacts its Maximum Temerature. Based on this relationship, it is clear that the highest Maximum Temperatures occur in cities closest to the equator (0 Degreese Latitude).
 
+* Humidity (%) vs. Latitude
+    - The Humidity vs. City Latitude scatter plot visualy displays how the latitude of a city impacts its Humidity level. There does not appear to be an obvious trend between the two variables.
+
+* Cloudiness (%) vs. Latitude
+    - The Cloudiness vs. City Latitude scatter plot visualy displays how the latitude of a city impacts its Cloudiness level. There does not appear to be an obvious trend between the two variables.
+
+* Wind Speed (mph) vs. Latitude
+    - The Wind Speed vs. City Latitude scatter plot visualy displays how the latitude of a city impacts its Wind Speed. There does not appear to be an obvious trend between the two variables.
 After each plot, add a sentence or two explaining what the code is analyzing.
 
 The second requirement is to run linear regression on each relationship. This time, separate the plots into Northern Hemisphere (greater than or equal to 0 degrees latitude) and Southern Hemisphere (less than 0 degrees latitude):
 
+#### Liner Regressions by Hemisphere
+
+A linear regression was performed on the following after splitting the weather data frame into Northern (Latitude >0) and Southern (Latitude < 0) Hemispheres:
+
 * Northern Hemisphere - Temperature (F) vs. Latitude
 * Southern Hemisphere - Temperature (F) vs. Latitude
+
+    - Based on the Max Temperature vs. Latitude regression for the Northern and Southern Hemispheres, the expected temperatures at the equator are 306.11 K and 299.46 K respectively. Combining these two results together, the Max Temperature near the equator is likely close to 302.78 K.
+
 * Northern Hemisphere - Humidity (%) vs. Latitude
 * Southern Hemisphere - Humidity (%) vs. Latitude
+
+    - Based on the Humidity vs. Latitude regression for the Northern and Southern Hemispheres, there does not appear to be a strong relationship between the two variables for either hemisphere. Theoretically, humidity is a function of the air temperature and the the moisture available to be absorbed.
+
 * Northern Hemisphere - Cloudiness (%) vs. Latitude
 * Southern Hemisphere - Cloudiness (%) vs. Latitude
+
+    - Based on the Cloudiness vs. Latitude regression for the Northern and Southern Hemispheres, there does not appear to be a strong correlation between the two variables for either hemisphere. 
+
 * Northern Hemisphere - Wind Speed (mph) vs. Latitude
 * Southern Hemisphere - Wind Speed (mph) vs. Latitude
 
-After each pair of plots, take the time to explain what the linear regression is modeling. For example, describe any relationships you notice and any other analysis you may have.
+    - Based on the Wind Speed vs. Latitude regression for the Northern and Southern Hemispheres, there does not appear to be a strong correlation between the two variables for either hemisphere.
 
-Your final notebook must:
+#### Output Files
 
-* Randomly select **at least** 500 unique (non-repeat) cities based on latitude and longitude.
-* Perform a weather check on each of the cities using a series of successive API calls.
-* Include a print log of each city as it's being processed with the city number and city name.
-* Save a CSV of all retrieved data and a PNG image for each scatter plot.
-
-#### Observations and Insights
+- CSV
+    - zzz
+- PNG
+    - zzz
+    - zzz
+    - zzz
 
 ### VacationPy
 * Create a heat map that displays the humidity for every city from Part I.
