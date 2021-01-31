@@ -79,6 +79,8 @@ A linear regression was performed on the following after splitting the weather d
 * Southern Hemisphere - Temperature (F) vs. Latitude
 
     - Based on the Max Temperature vs. Latitude regression for the Northern and Southern Hemispheres, the expected temperatures at the equator are 306.11 K and 299.46 K respectively. Combining these two results together, the Max Temperature near the equator is likely close to 302.78 K.
+    - The Northern Hemisphere plot shows that Max Temperature has an inverse relationship with Latitude. As a cities latitude becomes more positive, farther north from the equator, the Max Temperature decreases. 
+    - The Southern Hemisphere Max Temperature vs. Latitude regression shows a positive correlation between Max Temperature and Latitude. As Latitude becomes less negative, closer to the equator, Max Temperature increases. 
 
 * Northern Hemisphere - Humidity (%) vs. Latitude
 * Southern Hemisphere - Humidity (%) vs. Latitude
@@ -98,43 +100,46 @@ A linear regression was performed on the following after splitting the weather d
 #### Output Files
 
 - CSV
-    - zzz
+    - cities.csv
 - PNG
-    - zzz
-    - zzz
-    - zzz
+    - Cloudiness_Lat_Scatter.png
+    - MaxTemp_Lat_Scatter.png    
+    - WindSpeed_Lat_Scatter.png
+    - Humidity_Lat_Scatter.png
+    - Norther_MaxTemp_Lat_Reg.png
+    - Southern_MaxTemp_Lat_Reg.png
+    - Northern_Cloudiness_Lat_Reg.png
+    - Southern_Cloudiness_Lat_Reg.png
+    - Northern_Humidity_Lat_Reg.png
+    - Southern_Humidity_Lat_Reg.png
+    - Northern_WindSpeed_Lat_Reg.png
+    - Southern_WindSpeed_Lat_Reg.png
 
 ### VacationPy
-* Create a heat map that displays the humidity for every city from Part I.
 
-  ![heatmap](Images/heatmap.png)
+#### Humidit Heatmap
 
-* Narrow down the DataFrame to find your ideal weather condition. For example:
+Heat map  displays the humidity for every city from WeatherPy.
 
-  * A max temperature lower than 80 degrees but higher than 70.
+#### Ideal Weather Conditions
 
-  * Wind speed less than 10 mph.
+Narrow down the weather DataFrame to find ideal weather condition.
+    - 75 < Max Temperature < 80 Farenheit, which is ~297 to 300 K
+    - Wind Speed < 2
+    - Humidity < 90
+    - Cloudiness < 30
 
-  * Zero cloudiness.
+Droping any rows that don't contain all three conditions. You want to be sure the weather is ideal.
 
-  * Drop any rows that don't contain all three conditions. You want to be sure the weather is ideal.
+#### Hotel Location Map
 
-  * **Note:** Feel free to adjust to your specifications but be sure to limit the number of rows returned by your API requests to a reasonable number.
+Using Google Places API, find the first hotel for each city located within 5000 meters of the coordinates for the cities within the ideal weather conditions list.
 
-* Using Google Places API to find the first hotel for each city located within 5000 meters of your coordinates.
+The hotels are then plotted on top of the humidity heatmap with each pin containing the **Hotel Name**, **City**, and **Country**.
 
-* Plot the hotels on top of the humidity heatmap with each pin containing the **Hotel Name**, **City**, and **Country**.
+#### Output Files
 
-  ![hotel map](Images/hotel_map.png)
-
-As final considerations:
-
-* You must complete your analysis using a Jupyter notebook.
-* You must use the Matplotlib or Pandas plotting libraries.
-* For Part I, you must include a written description of three observable trends based on the data.
-* For Part II, you must include a screenshot of the heatmap you create and include it in your submission.
-* You must use proper labeling of your plots, including aspects like: Plot Titles (with date of analysis) and Axes Labels.
-* For max intensity in the heat map, try setting it to the highest humidity found in the data set.
-
-#### Observations and Insights
+- PNG
+    - Humidity_Heat_Map
+    - Hotel_Marker_Heat_Map
 
